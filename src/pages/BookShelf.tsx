@@ -9,6 +9,9 @@ import BookEditModal from '../components/BookEditModal';
 import derImage from '../assets/esquinader.png';
 import { Plus } from 'lucide-react';  // Icono de Lucide
 
+const apiUrl = process.env.REACT_APP_API_URL;
+
+
 interface Book {
     id: number;
     title: string;
@@ -36,7 +39,7 @@ const BookShelf: React.FC = () => {
         // Fetch books from the backend
         const fetchBooks = async () => {
             try {
-                const response = await fetch('http://localhost:8000/api/v1/books');
+                const response = await fetch(`${apiUrl}/api/v1/books`);
                 const data = await response.json();
                 setBooks(data);
             } catch (error) {
@@ -75,7 +78,7 @@ const BookShelf: React.FC = () => {
             };
             
             try {
-                const response = await fetch('http://localhost:8000/api/v1/books', {
+                const response = await fetch(`${apiUrl}/api/v1/books`, {
                     method: 'POST',
                     headers: { 'Content-Type': 'application/json' },
                     body: JSON.stringify(newBookData),
@@ -126,7 +129,7 @@ const BookShelf: React.FC = () => {
             const updatedBookData = { title: formattedBook, color: editColor };
 
             try {
-                const response = await fetch(`http://localhost:8000/api/v1/books/${books[editIndex].id}`, {
+                const response = await fetch(`${apiUrl}/api/v1/books/${books[editIndex].id}`, {
                     method: 'PUT',
                     headers: { 'Content-Type': 'application/json' },
                     body: JSON.stringify(updatedBookData),
@@ -144,7 +147,7 @@ const BookShelf: React.FC = () => {
 
     const handleDeleteBook = async (index: number) => {
         try {
-            const response = await fetch(`http://localhost:8000/api/v1/books/${books[index].id}`, {
+            const response = await fetch(`${apiUrl}/api/v1/books/${books[index].id}`, {
                 method: 'DELETE',
             });
             if (response.ok) {
