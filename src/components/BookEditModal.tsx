@@ -1,6 +1,6 @@
 import React, { useEffect, useRef, ChangeEvent } from 'react';
 import { createPortal } from 'react-dom';
-import 'bootstrap/dist/css/bootstrap.min.css'; // Import Bootstrap CSS
+import 'bootstrap/dist/css/bootstrap.min.css'; 
 
 interface BookEditModalProps {
   show: boolean;
@@ -31,7 +31,6 @@ const BookEditModal: React.FC<BookEditModalProps> = ({
     return brightness > 128 ? '#000' : '#FFF';
   };
 
-  // Calculate a slightly darker shade for the spine
   const getDarkerColor = (baseColor: string): string => {
     const hexColor = baseColor.replace("#", "");
     const r = parseInt(hexColor.substring(0, 2), 16);
@@ -105,7 +104,6 @@ const BookEditModal: React.FC<BookEditModalProps> = ({
           transformStyle: 'preserve-3d'
         }}
       >
-        {/* Spine of the book */}
         <div
           style={{
             position: 'absolute',
@@ -120,7 +118,6 @@ const BookEditModal: React.FC<BookEditModalProps> = ({
             boxShadow: '5px 5px 15px rgba(0, 0, 0, 0.2)'
           }}
         >
-          {/* Spine texture */}
           <div
             style={{
               position: 'absolute',
@@ -132,7 +129,6 @@ const BookEditModal: React.FC<BookEditModalProps> = ({
           />
         </div>
 
-        {/* Main book cover */}
         <div className='d-flex p-4 '
           style={{
             backgroundColor: color,
@@ -190,7 +186,6 @@ const BookEditModal: React.FC<BookEditModalProps> = ({
             </div>
 
 
-            {/* Bootstrap buttons */}
             <div className="mt-3 d-flex justify-content-between">
               <button
                 className="btn btn-primary mr-2"

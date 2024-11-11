@@ -1,4 +1,3 @@
-/* Fuente Roboto */
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap');
 
 
@@ -35,16 +34,14 @@ button .me-2 {
     margin-right: 8px;
 }
 
-/* Título con fuente Roboto */
 h1 {
     font-family: 'Roboto', sans-serif;
     margin-bottom: 24px;
 }
 
-/* Mejorar separación y espaciado del formulario */
 .form-container {
-    margin-top: 40px; /* Separar un poco el formulario de los elementos superiores */
-    margin-bottom: 40px; /* Separar el formulario del contenido inferior */
+    margin-top: 40px; 
+    margin-bottom: 40px;
     text-align: center;
 }
 

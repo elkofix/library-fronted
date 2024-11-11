@@ -7,15 +7,14 @@ import centroImage from '../assets/centro.png';
 import izqImage from '../assets/esquinaizq.png';
 import BookEditModal from '../components/BookEditModal';
 import derImage from '../assets/esquinader.png';
-import { Plus } from 'lucide-react';  // Icono de Lucide
-
+import { Plus } from 'lucide-react';
 const apiUrl = process.env.REACT_APP_API_URL;
 
 
 interface Book {
     id: number;
     title: string;
-    color: string;  // Añadir color al libro
+    color: string;
 }
 
 const BookShelf: React.FC = () => {
@@ -36,7 +35,6 @@ const BookShelf: React.FC = () => {
     }
 
     useEffect(() => {
-        // Fetch books from the backend
         const fetchBooks = async () => {
             try {
                 const response = await fetch(`${apiUrl}/api/v1/books`);
@@ -165,7 +163,6 @@ const BookShelf: React.FC = () => {
                 Bienvenido a la librería de Alejandro
             </h1>
 
-            {/* Formulario para agregar libro */}
             <div className="d-flex justify-content-center mt-4 flex-wrap">
                 <input
                     type="text"
